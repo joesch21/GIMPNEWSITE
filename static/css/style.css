@@ -105,20 +105,22 @@ h1 {
     display: flex;
     justify-content: flex-end;
     background-color: #333333;
-    padding: 15px 30px; /* Increased padding */
+    padding: 10px 15px; /* Reduced padding for mobile */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    overflow-x: auto; /* Add horizontal scroll for smaller screens */
 }
 
 .navbar a {
     color: white;
-    padding: 16px 25px; /* Increased padding */
+    padding: 10px 15px; /* Reduced padding for mobile */
     text-decoration: none;
     text-align: center;
-    font-size: 1.5em; /* Increased font size */
+    font-size: 1.2em; /* Reduced font size for mobile */
     font-weight: bold;
+    flex-shrink: 0; /* Prevent shrinking of the links */
 }
 
 .navbar a:hover {
@@ -128,34 +130,22 @@ h1 {
 
 /* Ensure the content doesn't overlap with the navbar */
 .frame-container {
-    margin-top: 100px; /* Increased margin for larger navbar */
+    margin-top: 80px; /* Adjusted margin for navbar */
 }
 
 /* Responsive Design for mobile */
 @media (max-width: 768px) {
-    .button {
-        width: 100%;
-        padding: 10px 20px;
-        font-size: 1.2em;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    .modal-content {
-        margin: 15% auto;
-        width: 90%;
-        max-width: 500px; /* Reduced max width for mobile */
-        padding: 20px;
+    .navbar {
+        justify-content: flex-start;
+        padding: 8px 10px; /* Further reduce padding for small screens */
     }
 
     .navbar a {
-        padding: 14px 20px; /* Reduced padding for mobile */
-        font-size: 1.2em; /* Reduced font size */
+        font-size: 1em; /* Smaller font size for very small screens */
+        padding: 8px 10px; /* Further reduce padding for small screens */
     }
 
     .frame-container {
-        margin-top: 80px; /* Adjusted margin for mobile */
+        margin-top: 60px; /* Reduced margin for mobile */
     }
 }
