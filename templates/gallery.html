@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Gimp Project</title>
+    <link rel="stylesheet" href="/static/css/gallery.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{url_for('about_artist') }}">About the Artist</a>
+        <a href="{{url_for('gallery') }}">Gallery</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('rarity_score') }}">Rarity Score Calculations</a> 
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <h1>Welcome to the Gimp Gallery</h1>
+
+        <!-- Buttons for action -->
+        <button class="button" onclick="window.location.href='https://marketplace-template-joesch21s-projects.vercel.app/collection/56/0xF09334a9027b263096b772b0F46D271E90b53F3E'">Go to NFT Marketplace</button>
+
+        <!-- Gallery Section -->
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="/static/images/nft_00bf2f02-987c-4cd2-aa62-839163a3220c.png" alt="NFT 1">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/nft_4b40eddb-4ed5-470a-b81c-d9a39f42dc77.png" alt="NFT 2">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/nft_f3ebe04b-7b85-4c61-9d85-f25a198c8329.png" alt="NFT 3">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/nft_ecd0be03-89ca-420d-be61-e1e192c4a6a6.png" alt="NFT 3">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/nft_47afe354-7000-471d-9507-af3ef5ea73a3.png" alt="NFT 3">
+            </div>
+
+        <!-- T-shirt Store Section -->
+        <div class="tshirt-container" style="border: 8px solid gold; padding: 20px; margin-top: 30px;">
+            <h2>Check Out Our T-Shirts!</h2>
+            <p>Explore our exclusive Gimp T-shirts featuring unique generative art designs.</p>
+            <button class="button" onclick="window.location.href='https://my-store-7766589.creator-spring.com/listing/new-gimp-1?ai=&ai='">Shop Gimp T-Shirts</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* General styles for the About page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/static/images/IMG_2547.PNG');
+    background-size: cover;
+    background-position: center;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    text-align: right;
+    padding: 20px;
+    background-color: rgba(44, 43, 43, 0.9); /* Semi-transparent background */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar a {
+    color: #fff;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Main frame for content - desktop version */
+.content-frame {
+    max-width: 1200px;
+    padding: 50px;
+    background-color: rgba(58, 58, 58, 0.9); /* Transparent background for layering */
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #eee;
+    position: relative;
+    margin: 100px auto; /* This will push the content below the fixed navbar */
+}
+
+/* Add a different inner frame with a lighter background */
+.inner-frame {
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background for contrast */
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+}
+
+/* Heading styles */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #f5f5f5;
+    margin-top: 40px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4caf50; /* Add a border to separate sections */
+    padding-bottom: 10px;
+}
+
+/* Paragraphs and text */
+p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* List styles for references */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #bbb;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Adjust background size for smaller screens */
+        padding: 0 10px;
+    }
+
+    .content-frame {
+        padding: 20px;
+        max-width: 100%;
+        background-color: rgba(58, 58, 58, 0.95); /* Increase opacity for better readability */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        margin-top: 120px; /* Adjust to prevent content from being hidden under navbar */
+    }
+
+    .inner-frame {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem; /* Increased from 1.5rem to make it bigger */
+    }
+
+    p {
+        font-size: 1.1rem; /* Increased from 1rem to make it bigger */
+    }
+
+    .navbar a {
+        font-size: 1.2rem; /* Increased font size */
+    }
+}
+
+/* Smaller screens (mobile) */
+@media (max-width: 480px) {
+    body {
+        padding: 0 5px;
+    }
+
+    .content-frame {
+        padding: 15px;
+        margin-top: 10px; /* Ensure content doesn't overlap with navbar on smaller screens */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+    }
+}

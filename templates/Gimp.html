@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI ART NFT Generator - The Gimp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about_artist') }}">About the Artist</a>
+        <a href="{{ url_for('gallery') }}">NFT Gallery</a>
+        <a href="{{ url_for('about') }}">What is Generative Art?</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('rarity_score') }}">Rarity Score Calculations</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="frame-container" id="frame-container">
+        <h1>Generative AI Gimp NFT Gallery</h1>
+        <button class="button" onclick="generateNFT()">Produce Random Generative AI Gimp NFT</button>
+        <button class="button" id="auto-generate-button" onclick="startAutoGenerate()">Start Auto Generate</button>
+        <button class="button" id="stop-generate-button" onclick="stopAutoGenerate()" style="display:none;">Stop Auto Generate</button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="nftModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Your NFT will appear here" />
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let autoGenerateInterval;
+
+        // Function to fetch and display random NFT image in a modal
+        function generateNFT() {
+            fetch('{{ url_for("generate_nft") }}')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.image_path) {
+                        let imageUrl = `${data.image_path}?t=${new Date().getTime()}`; // Cache-busting with timestamp
+                        document.getElementById('modal-image').src = imageUrl; // Set image source
+                        openModal(); // Show the modal
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Function to open the modal
+        function openModal() {
+            document.getElementById('nftModal').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('nftModal').style.display = 'none';
+        }
+
+        // Start auto-generating an image every 5 seconds
+        function startAutoGenerate() {
+            document.getElementById('auto-generate-button').style.display = 'none';
+            document.getElementById('stop-generate-button').style.display = 'inline';
+
+            generateNFT(); // Generate the first NFT immediately
+            autoGenerateInterval = setInterval(generateNFT, 5000); // Generate every 5 seconds
+        }
+
+        // Stop auto-generating images
+        function stopAutoGenerate() {
+            clearInterval(autoGenerateInterval);
+            document.getElementById('auto-generate-button').style.display = 'inline';
+            document.getElementById('stop-generate-button').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

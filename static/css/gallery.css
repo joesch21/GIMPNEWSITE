@@ -1,0 +1,145 @@
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 25px; /* Increased padding for desktop */
+    text-decoration: none;
+    font-size: 18px; /* Increased font size */
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Page background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/background/IMG_3402.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Content wrapper */
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px; /* Increased padding for desktop */
+    border-radius: 15px; /* Increased border radius */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Larger shadow for desktop */
+    max-width: 1400px; /* Increased width for desktop */
+    width: 90%;
+    text-align: center;
+    margin: 20px auto; /* Added margin for better centering */
+}
+
+/* Gallery styling */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Larger images on desktop */
+    gap: 30px; /* Increased gap between images */
+    padding: 30px; /* Increased padding */
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Slightly larger border-radius for images */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1); /* Slightly larger hover effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Added shadow on hover */
+}
+
+/* Button styling */
+.button {
+    padding: 15px 30px; /* Larger button padding for desktop */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Slightly rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 18px; /* Larger button font size */
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Added shadow on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller image sizes on mobile */
+    }
+
+    .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 10px 15px; /* Smaller button padding for mobile */
+    }
+
+    .content-wrapper {
+        padding: 30px; /* Reduced padding for mobile */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .navbar a {
+        font-size: 14px; /* Smaller font size for navbar on very small screens */
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Smaller images on very small screens */
+    }
+
+    .button {
+        padding: 8px 12px;
+        font-size: 16px; /* Reduced button size */
+    }
+
+    .content-wrapper {
+        padding: 20px;
+    }
+}

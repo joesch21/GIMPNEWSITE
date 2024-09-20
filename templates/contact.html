@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{url_for('about_artist') }}">About the Artist</a>
+        <a href="{{url_for('gallery') }}">Gallery</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('rarity_score') }}">Rarity Score Calculations</a>
+    </div>
+    
+
+    <!-- Contact Section -->
+    <div class="frame-container">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us by clicking on the email address below, which will open your email client.</p>
+
+        <!-- Email link using mailto -->
+        <p>
+            Contact us via email at:
+            <a href="mailto:tradingnftwithgcc@gmail.com">tradingnftwithgcc@gmail.com</a>
+        </p>
+
+        <p>Alternatively, you can copy the email and reach out to us using your preferred method.</p>
+    </div>
+
+</body>
+</html>

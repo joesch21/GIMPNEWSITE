@@ -1,0 +1,199 @@
+/* General styles for the About page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    scroll-behavior: smooth;
+}
+
+/* Dynamic floating effect for sections */
+.section {
+    width: 80vw; /* Increased section width for desktop */
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 40px; /* Increased padding for better spacing */
+    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Floating and scaling effect when sections come into view */
+.section:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.8);
+}
+
+/* Floating animation */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.section {
+    animation: floating 6s ease-in-out infinite;
+}
+
+/* Heading styles */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 4rem; /* Larger font size for desktop */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 2.5rem; /* Larger font size for h2 elements */
+    color: #4caf50;
+    margin-top: 40px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #4caf50;
+    padding-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.5rem; /* Increased font size for better readability */
+    color: #ddd;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    background-color: rgba(44, 43, 43, 0.9);
+    z-index: 100;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a {
+    color: #fff;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Button style */
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 30px; /* Increased padding for better visibility */
+    font-size: 1.5rem; /* Larger font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        overflow-x: hidden;
+        min-height: auto;
+    }
+
+    .section {
+        width: 90vw;
+        height: auto;
+        margin: 20px 0;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .navbar a {
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        min-height: auto;
+    }
+
+    .section {
+        width: 95vw;
+        height: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+}
