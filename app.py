@@ -52,5 +52,10 @@ def contact():
 def rarity_score():
     return render_template('rarity_score.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
+
 if __name__ == '__main__':
     app.run(debug=True)
