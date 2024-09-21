@@ -1,0 +1,53 @@
+[33mcommit ceb66fda29655af4ea9c71f8e0eff8d3d60cb59c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Sat Sep 21 16:14:39 2024 +1000
+
+    index incorrect adjusted.
+
+[33mcommit 75e906291b0502c62fe8ae82ebf1ac329c778ee5[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Sat Sep 21 15:49:57 2024 +1000
+
+    Updated layout for mobile view, added flexbox and grid adjustments.
+
+[33mcommit fd09da109a40469ccefa6431b84985390bda0612[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 18:41:29 2024 +1000
+
+    updated navbar menu
+
+[33mcommit 127e55910538c69527421f572a3f86569c46b8e0[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 17:46:13 2024 +1000
+
+    add requirements
+
+[33mcommit 86c6d4dae89d4157a846257aa9ea5bc31b908a86[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 16:52:26 2024 +1000
+
+    Cleaned up requirements.txt
+
+[33mcommit b2d990a5bf2c59a379c34c5ae824b2636675138e[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 16:21:43 2024 +1000
+
+    Updated app.py
+
+[33mcommit 409dd54803725c6b4da6f869e06e0aa5642a0034[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 16:05:27 2024 +1000
+
+    Added Procfile and requirements.txt
+
+[33mcommit 1660bf92f9af63be8ce99a02eefe1e8ac33d20d7[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 11:11:47 2024 +1000
+
+    updated files
+
+[33mcommit 1114add8a6c775558c7a447b4b4086430115cd58[m
+Author: GoldCondorCapital <goldcondorcapital@hotmail.com>
+Date:   Fri Sep 20 11:05:54 2024 +1000
+
+    Updated CSS for desktop layout and modal improvements
