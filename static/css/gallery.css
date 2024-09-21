@@ -13,9 +13,9 @@
     display: block;
     color: white;
     text-align: center;
-    padding: 16px 25px; /* Increased padding for desktop */
+    padding: 16px 25px;
     text-decoration: none;
-    font-size: 18px; /* Increased font size */
+    font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s ease;
 }
@@ -49,21 +49,30 @@ body {
 /* Content wrapper */
 .content-wrapper {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 50px; /* Increased padding for desktop */
-    border-radius: 15px; /* Increased border radius */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Larger shadow for desktop */
-    max-width: 1400px; /* Increased width for desktop */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    max-width: 1400px;
     width: 90%;
     text-align: center;
-    margin: 20px auto; /* Added margin for better centering */
+    margin: 20px auto;
+}
+
+/* Flex container to wrap gallery and T-shirt section */
+.gallery-tshirt-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 /* Gallery styling */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Larger images on desktop */
-    gap: 30px; /* Increased gap between images */
-    padding: 30px; /* Increased padding */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    flex: 1;
 }
 
 .gallery-item {
@@ -73,38 +82,53 @@ body {
 .gallery-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Slightly larger border-radius for images */
+    border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.1); /* Slightly larger hover effect */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Added shadow on hover */
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* T-shirt container (yellow box) */
+.tshirt-container {
+    flex: 1;
+    padding: 20px;
+    border: 3px solid gold;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: left;
 }
 
 /* Button styling */
 .button {
-    padding: 15px 30px; /* Larger button padding for desktop */
+    padding: 15px 30px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 8px; /* Slightly rounded corners */
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: 18px; /* Larger button font size */
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
 .button:hover {
     background-color: #45a049;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Added shadow on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 932px) {
+    .gallery-tshirt-wrapper {
+        flex-direction: column; /* Stack gallery and T-shirt container vertically */
+    }
+
     .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller image sizes on mobile */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     .navbar a {
@@ -116,30 +140,35 @@ body {
 
     .button {
         width: 100%;
-        padding: 10px 15px; /* Smaller button padding for mobile */
+        padding: 10px 15px;
     }
 
     .content-wrapper {
-        padding: 30px; /* Reduced padding for mobile */
+        padding: 30px;
+    }
+
+    .tshirt-container {
+        margin-top: 30px;
     }
 }
 
 /* Further adjustments for very small screens */
-@media screen and (max-width: 480px) {
-    .navbar a {
-        font-size: 14px; /* Smaller font size for navbar on very small screens */
-    }
-
+@media screen and (max-width: 768px) {
     .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Smaller images on very small screens */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust image sizes on small screens */
     }
 
     .button {
-        padding: 8px 12px;
-        font-size: 16px; /* Reduced button size */
+        padding: 10px 20px;
+        font-size: 16px;
     }
 
     .content-wrapper {
         padding: 20px;
+    }
+
+    .tshirt-container {
+        margin-top: 20px;
+        text-align: center; /* Center text on smaller screens */
     }
 }

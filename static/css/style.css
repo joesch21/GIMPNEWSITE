@@ -118,7 +118,7 @@ h1 {
     padding: 10px 15px; /* Reduced padding for mobile */
     text-decoration: none;
     text-align: center;
-    font-size: 1.2em; /* Reduced font size for mobile */
+    font-size: 1.5em; /* Reduced font size for mobile */
     font-weight: bold;
     flex-shrink: 0; /* Prevent shrinking of the links */
 }
