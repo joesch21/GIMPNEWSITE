@@ -1,52 +1,51 @@
-/* Navbar styling */
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+/* Resetting all margins and paddings for body */
+* {
+    box-sizing: border-box;
 }
 
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px 25px;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    transition: background-color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #575757;
-}
-
-.navbar a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Page background */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/background/IMG_3402.PNG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('/static/background/IMG_3402.PNG') center / cover no-repeat;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Align everything from the top */
     align-items: center;
     color: white;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
 }
 
-/* Content wrapper */
+/* Ensure the navbar is flush with the top and left */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+}
+
+/* Styling navbar links */
+.navbar a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove any extra margins or padding around body and sections */
 .content-wrapper {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 50px;
@@ -58,49 +57,37 @@ body {
     margin: 20px auto;
 }
 
-/* Flex container to wrap gallery and T-shirt section */
+/* Gallery container adjustments */
 .gallery-tshirt-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
 }
 
-/* Gallery styling */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
     padding: 30px;
-    flex: 1;
+    justify-items: center;
+    justify-content: center;
 }
 
+/* Gallery item and image styling */
 .gallery-item {
     position: relative;
+}
+
+.gallery-item img, .button {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* T-shirt container (yellow box) */
-.tshirt-container {
-    flex: 1;
-    padding: 20px;
-    border: 3px solid gold;
-    border-radius: 8px;
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    text-align: left;
 }
 
 /* Button styling */
@@ -110,65 +97,95 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: 18px;
+    font-size: 10px;
     margin-bottom: 20px;
 }
 
-.button:hover {
-    background-color: #45a049;
+/* Hover effects */
+.navbar a:hover, .button:hover {
+    background-color: #575757;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 932px) {
-    .gallery-tshirt-wrapper {
-        flex-direction: column; /* Stack gallery and T-shirt container vertically */
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        min-height: auto;
     }
 
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-
-    .navbar a {
-        float: none;
-        display: block;
-        text-align: left;
-        padding: 10px;
-    }
-
-    .button {
-        width: 100%;
-        padding: 10px 15px;
-    }
-
-    .content-wrapper {
+    .section {
+        width: 90vw;
+        height: auto;
+        margin: 20px 0;
         padding: 30px;
     }
 
-    .tshirt-container {
-        margin-top: 30px;
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .navbar a {
+        margin-left: 10px;
+        font-size: 1rem;
+        padding: 10px 15px; /* Smaller padding on mobile */
     }
 }
 
-/* Further adjustments for very small screens */
-@media screen and (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust image sizes on small screens */
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+    body {
+        flex-wrap: wrap;
+        min-height: auto;
     }
 
-    .button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
-    .content-wrapper {
+    .section {
+        width: 100vw;
+        height: auto;
         padding: 20px;
     }
 
-    .tshirt-container {
-        margin-top: 20px;
-        text-align: center; /* Center text on smaller screens */
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.5rem;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 0.6rem;
+        padding: 8px 10px; /* Reduce padding for smallest screens */
     }
 }
