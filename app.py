@@ -9,7 +9,7 @@ def get_random_image():
     image_folder = os.path.join(app.static_folder, 'images')
     images = [f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))]
     if images:
-        return random.choice(images)  # Select a random image from the list
+        return random.choice(images)
     return None
 
 # Route to handle NFT generation and select a random image
@@ -17,12 +17,12 @@ def get_random_image():
 def generate_nft():
     random_image = get_random_image()
     if random_image:
-        image_url = f"/static/images/{random_image}"  # Return the image URL only
-        return jsonify(image_path=image_url)  # Only return the image path as JSON
+        image_url = f"/static/images/{random_image}"
+        return jsonify(image_path=image_url)
     else:
         return jsonify(message="No images found"), 404
 
-# Serving the background image (for the About page or other purposes)
+# Serving the background image
 @app.route('/background/<filename>')
 def serve_background_image(filename):
     return send_from_directory(os.path.join(app.static_folder, 'background'), filename)
@@ -48,6 +48,11 @@ def about():
 def contact():
     return render_template('contact.html')
 
+# ✅ Added the Voting Proposal route
+@app.route('/nft_voting_proposal')
+def nft_voting_proposal():
+    return render_template('nft_voting_proposal.html')
+
 @app.route('/rarity_score')
 def rarity_score():
     return render_template('rarity_score.html')
@@ -55,7 +60,6 @@ def rarity_score():
 @app.route('/favicon.ico')
 def favicon():
     return '', 204
-
 
 if __name__ == '__main__':
     app.run(debug=True)

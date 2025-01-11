@@ -8,13 +8,24 @@
 </head>
 <body>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI ART NFT Generator - The Gimp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
     <div class="navbar">
         <a href="{{ url_for('index') }}">Home</a>
         <a href="{{ url_for('about_artist') }}">Artist</a>
         <a href="{{ url_for('gallery') }}">Gallery</a>
         <a href="{{ url_for('about') }}">About</a>
         <a href="{{ url_for('contact') }}">Contact</a>
-        <a href="{{ url_for('rarity_score') }}">Ai</a>
+        <a href="{{ url_for('rarity_score') }}">Rarity Score</a>
+        <a href="{{ url_for('nft_voting_proposal') }}">Voting Proposal</a>
     </div>
 
     <!-- Main Content -->
@@ -43,9 +54,9 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.image_path) {
-                        let imageUrl = `${data.image_path}?t=${new Date().getTime()}`; // Cache-busting with timestamp
-                        document.getElementById('modal-image').src = imageUrl; // Set image source
-                        openModal(); // Show the modal
+                        let imageUrl = `${data.image_path}?t=${new Date().getTime()}`;
+                        document.getElementById('modal-image').src = imageUrl;
+                        openModal();
                     }
                 })
                 .catch(error => console.error('Error:', error));
@@ -65,9 +76,8 @@
         function startAutoGenerate() {
             document.getElementById('auto-generate-button').style.display = 'none';
             document.getElementById('stop-generate-button').style.display = 'inline';
-
-            generateNFT(); // Generate the first NFT immediately
-            autoGenerateInterval = setInterval(generateNFT, 5000); // Generate every 5 seconds
+            generateNFT();
+            autoGenerateInterval = setInterval(generateNFT, 5000);
         }
 
         // Stop auto-generating images

@@ -26,7 +26,7 @@ body {
     margin-left: 20px;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.6rem;
     padding: 10px 15px;
     border-radius: 5px;
 }
@@ -44,7 +44,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     line-height: 1.8;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #eee;
     position: relative;
     margin: 100px auto; /* This will push the content below the fixed navbar */
@@ -61,7 +61,7 @@ body {
 /* Heading styles */
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fff;
     margin-bottom: 30px;
     text-align: center;
@@ -82,7 +82,7 @@ h2 {
 
 /* Paragraphs and text */
 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #ddd;
     margin: 20px 0;
     line-height: 1.8;
@@ -121,19 +121,19 @@ ul li {
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 1rem;
     }
 
     h2 {
-        font-size: 2rem; /* Increased from 1.5rem to make it bigger */
+        font-size: 1rem; /* Increased from 1.5rem to make it bigger */
     }
 
     p {
-        font-size: 1.1rem; /* Increased from 1rem to make it bigger */
+        font-size: 1rem; /* Increased from 1rem to make it bigger */
     }
 
     .navbar a {
-        font-size: 1.2rem; /* Increased font size */
+        font-size: 0.8rem; /* Increased font size */
     }
 }
 
@@ -149,11 +149,11 @@ ul li {
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 1rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     p {
@@ -161,6 +161,6 @@ ul li {
     }
 
     .navbar a {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
